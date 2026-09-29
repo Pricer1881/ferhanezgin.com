@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ferhan Ezgin · SAP Vistex consultant</title>
+<meta name="description" content="Ferhan Ezgin is an SAP Vistex consultant with 18+ years across ECC and S/4HANA, specialising in rebates, chargebacks and DMP pricing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6F7; --surface:#FFFFFF; --ink:#1B2630; --muted:#5A6873; --line:#D5DCE1;
+  --accent:#0E5A61; --accent-soft:#E1EEEF; --total:#9A6A12;
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#12181D; --surface:#1A2229; --ink:#E4EAEE; --muted:#9AA8B2; --line:#2C3740;
+    --accent:#5FB7BE; --accent-soft:#1D3236; --total:#E0B45A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12181D; --surface:#1A2229; --ink:#E4EAEE; --muted:#9AA8B2; --line:#2C3740;
+  --accent:#5FB7BE; --accent-soft:#1D3236; --total:#E0B45A;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+*,*::before,*::after{box-sizing:inherit;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px;}
+a:hover{text-decoration-thickness:2px;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+
+/* header */
+header.site{border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:env(safe-area-inset-top,0px);z-index:5;}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap;}
+.brand{font-weight:700;font-size:18px;color:var(--ink);text-decoration:none;letter-spacing:-.01em;}
+nav ul{list-style:none;display:flex;gap:4px;margin:0;padding:0;flex-wrap:wrap;}
+nav a{display:block;padding:8px 12px;color:var(--muted);text-decoration:none;font-size:15px;font-weight:500;border-radius:6px;}
+nav a:hover{color:var(--ink);background:var(--accent-soft);}
+nav a[aria-current="page"]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent);border-radius:0;}
+
+main{min-height:70vh;}
+section.page{padding:56px 0 80px;}
+h1,h2,h3{letter-spacing:-.015em;line-height:1.2;margin:0;}
+h1{font-size:clamp(34px,5vw,48px);font-weight:700;}
+h2{font-size:26px;font-weight:700;}
+h3{font-size:19px;font-weight:600;}
+.lede{font-size:19px;color:var(--muted);max-width:60ch;margin:16px 0 0;}
+.placeholder{background:var(--accent-soft);border-radius:3px;padding:0 4px;color:var(--ink);}
+
+/* hero: a pricing procedure */
+.hero{display:grid;grid-template-columns:1fr;gap:40px;padding:72px 0 56px;}
+@media(min-width:880px){.hero{grid-template-columns:1fr 1.15fr;align-items:center;}}
+.hero h1{font-size:clamp(40px,6vw,60px);}
+.procedure{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-variant-numeric:tabular-nums;}
+.procedure .cap{display:flex;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted);}
+.procedure table{width:100%;border-collapse:collapse;font-size:15px;}
+.procedure td{padding:11px 18px;border-bottom:1px solid var(--line);vertical-align:top;}
+.procedure td.step{width:56px;color:var(--muted);}
+.procedure td.op{width:30px;font-weight:600;color:var(--accent);text-align:center;}
+.procedure td.what small{display:block;color:var(--muted);font-size:13px;margin-top:2px;}
+.procedure tr.net td{border-bottom:0;border-top:2px solid var(--ink);font-weight:600;}
+.procedure tr.net td.op{color:var(--total);}
+.procedure tr.net td.what{color:var(--ink);}
+.procedure tbody tr{opacity:1;}
+@media (prefers-reduced-motion:no-preference){
+  .procedure.animate tbody tr{opacity:0;transform:translateY(4px);animation:line .35s ease forwards;}
+  .procedure.animate tbody tr:nth-child(1){animation-delay:.15s}
+  .procedure.animate tbody tr:nth-child(2){animation-delay:.35s}
+  .procedure.animate tbody tr:nth-child(3){animation-delay:.55s}
+  .procedure.animate tbody tr:nth-child(4){animation-delay:.75s}
+  .procedure.animate tbody tr:nth-child(5){animation-delay:1.05s}
+}
+@keyframes line{to{opacity:1;transform:none}}
+
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;}
+.btn{display:inline-block;padding:11px 18px;border-radius:6px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--accent);}
+.btn.primary{background:var(--accent);color:var(--surface);}
+.btn.ghost{color:var(--accent);background:transparent;}
+.btn:hover{text-decoration:none;filter:brightness(1.08);}
+
+.split{display:grid;grid-template-columns:1fr;gap:32px;border-top:1px solid var(--line);padding-top:40px;}
+@media(min-width:880px){.split{grid-template-columns:220px 1fr;}}
+.split > h2{font-size:20px;}
+
+/* post list */
+.posts{list-style:none;margin:0;padding:0;}
+.posts li{padding:20px 0;border-bottom:1px solid var(--line);}
+.posts li:first-child{padding-top:0;}
+.posts a.title{font-size:20px;font-weight:600;color:var(--ink);text-decoration:none;}
+.posts a.title:hover{color:var(--accent);}
+.posts p{margin:6px 0 0;color:var(--muted);max-width:65ch;}
+.meta{font-size:14px;color:var(--muted);margin-top:8px;}
+.tag{display:inline-block;font-size:13px;color:var(--accent);background:var(--accent-soft);padding:1px 8px;border-radius:99px;margin-right:6px;}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 32px;}
+.filters button{font:inherit;font-size:14px;padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface);}
+
+/* resume */
+.resume{display:grid;grid-template-columns:1fr;gap:48px;margin-top:40px;}
+@media(min-width:880px){.resume{grid-template-columns:1fr 280px;}}
+.role{padding:0 0 28px;margin-bottom:28px;border-bottom:1px solid var(--line);}
+.role:last-child{border-bottom:0;}
+.role .when{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums;}
+.role h3{margin-top:4px;}
+.role .org{color:var(--muted);margin-top:2px;}
+.role ul{margin:12px 0 0;padding-left:20px;}
+.role li{margin:6px 0;}
+aside.side h3{font-size:16px;margin:0 0 10px;}
+aside.side ul{list-style:none;padding:0;margin:0 0 32px;}
+aside.side li{padding:6px 0;border-bottom:1px solid var(--line);font-size:15px;}
+
+/* article */
+article.post{max-width:680px;}
+article.post .body{font-family:var(--serif);font-size:19px;line-height:1.7;margin-top:32px;}
+article.post .body h2{font-family:var(--sans);font-size:22px;margin:40px 0 12px;}
+article.post .body p{margin:0 0 20px;}
+article.post .body code{font-size:.88em;background:var(--accent-soft);padding:1px 5px;border-radius:3px;}
+article.post .body blockquote{margin:24px 0;padding:4px 0 4px 20px;border-left:3px solid var(--accent);color:var(--muted);font-style:italic;}
+.tablewrap{overflow-x:auto;margin:0 0 24px;}
+article.post table{border-collapse:collapse;font-family:var(--sans);font-size:15px;min-width:420px;width:100%;font-variant-numeric:tabular-nums;}
+article.post th,article.post td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);}
+article.post th{font-weight:600;}
+.back{font-size:15px;text-decoration:none;}
+
+.prose{max-width:65ch;}
+.prose p{margin:0 0 18px;}
+.contact-list{list-style:none;padding:0;margin:28px 0 0;}
+.contact-list li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:16px;flex-wrap:wrap;}
+.contact-list span{width:110px;color:var(--muted);}
+
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(--muted);}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#/">Ferhan Ezgin</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#/" data-nav="home">Home</a></li>
+        <li><a href="#/resume" data-nav="resume">Resume</a></li>
+        <li><a href="#/blog" data-nav="blog">Blog</a></li>
+        <li><a href="#/about" data-nav="about">About</a></li>
+        <li><a href="#/contact" data-nav="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="app" class="wrap" tabindex="-1"></main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Ferhan Ezgin</span>
+    <span>Views are my own and don't represent any client or employer.</span>
+  </div>
+</footer>
+
+<script>
+const POSTS = [
+  {
+    slug:"delta-accruals-at-volume",
+    title:"Delta accruals: keeping rebate accruals honest at volume",
+    date:"2026-09-21", tags:["Rebates"], mins:6,
+    summary:"Why recalculating every accrual from scratch stops scaling, and what to design up front so delta accruals stay reconcilable.",
+    body:`
+<p>Rebate accruals look simple on a whiteboard: take the eligible volume, apply the rate, post the liability. The trouble starts when there are thousands of agreements and millions of billing or goods-receipt lines, and every run recalculates everything.</p>
+<h2>Full recalculation versus deltas</h2>
+<p>A full recalculation re-reads the whole history of an agreement on every run and posts the difference. It's easy to reason about, but run time grows with the history, not with the day's activity. A delta approach only processes documents that are new or changed since the last run, so run time follows actual volume.</p>
+<h2>What deltas demand from the design</h2>
+<p>Deltas are only as good as the change detection behind them. Before choosing them, I make sure the design answers three questions: what counts as a change to an eligible document, what happens when an agreement's terms change retroactively, and how a missed or failed run is caught up.</p>
+<blockquote>If you can't explain how to rebuild an accrual from scratch, you can't trust the delta either.</blockquote>
+<h2>Keep a way back to the full picture</h2>
+<p>I always keep a controlled full-recalculation option for period end and for agreements whose terms changed. Finance gets a reconciliation report comparing accrued amounts with a full recalculation, so any drift is visible before it reaches the ledger.</p>`
+  },
+  {
+    slug:"access-sequences-in-practice",
+    title:"How access sequences actually get evaluated",
+    date:"2026-09-14", tags:["Pricing"], mins:6,
+    summary:"A worked example of the order SAP searches condition tables, and why the exclusive indicator matters more than most specs admit.",
+    body:`
+<p>Almost every pricing spec I read describes access sequences as a list of tables. That's accurate, but it hides the part that causes defects: the order of evaluation and what happens when more than one record could match.</p>
+<h2>The search, step by step</h2>
+<p>For each condition type in the procedure, SAP walks its access sequence from top to bottom. Each access reads one condition table using key fields filled from the document. If an access finds a valid record and the access is marked exclusive, the search stops there.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Access</th><th>Table key</th><th>Exclusive</th><th>Found?</th></tr></thead>
+<tbody>
+<tr><td>10</td><td>Customer / material</td><td>Yes</td><td>No</td></tr>
+<tr><td>20</td><td>Price list / material</td><td>Yes</td><td>Yes, 12.40</td></tr>
+<tr><td>30</td><td>Material</td><td>Yes</td><td>Not read</td></tr>
+</tbody></table></div>
+<p>In this example the price list price wins, and the general material price is never read. Remove the exclusive flag on access 20 and the search carries on. The last record found becomes the one used, which is rarely what the business expects.</p>
+<h2>What I put in every spec now</h2>
+<p>For each access I state the business rule it represents, which document fields feed the key, and one sample record that proves it fires. Testers can then build a scenario per access instead of guessing.</p>
+<blockquote>If you can't write a test case for an access, you probably don't need the access.</blockquote>
+<p>It's a small discipline, but it has removed a whole class of "wrong price" defects from my projects.</p>`
+  },
+  {
+    slug:"specs-developers-like",
+    title:"Writing functional specs developers actually like",
+    date:"2026-08-30", tags:["Delivery"], mins:5,
+    summary:"Fewer screenshots, more examples. What I've changed in how I write pricing specifications after a lot of build reviews.",
+    body:`
+<p>A good functional spec is read three times: by the developer who builds it, the tester who proves it, and whoever supports it a year later. Most specs are written for none of them. They're written to be signed off.</p>
+<h2>Lead with examples, not rules</h2>
+<p>Developers reason well from concrete cases. I now open every calculation section with two or three fully worked examples, including input values, intermediate results and the expected output, before stating the general rule.</p>
+<h2>Say what happens when data is missing</h2>
+<p>The happy path is rarely where the questions come from. Every input field gets a line saying what the program should do if it's blank, zero or invalid. That single habit cuts clarification rounds more than anything else I've tried.</p>
+<h2>Keep decisions separate from design</h2>
+<p>I keep a short decision log at the end: what was decided, by whom, and why. It stops the design section from filling up with history, and it answers the "why is it like this?" question later on.</p>`
+  },
+  {
+    slug:"pricing-master-data-triggers",
+    title:"Which master data changes should trigger a price update?",
+    date:"2026-08-11", tags:["Integration","Pricing"], mins:7,
+    summary:"When prices are calculated outside the ERP, deciding which field changes send an update is a design question, not a technical detail.",
+    body:`
+<p>When pricing moves to an external engine, someone has to decide which changes in the ERP should cause prices to be recalculated and sent again. Get it too narrow and prices go stale. Get it too wide and the interface floods with updates that change nothing.</p>
+<h2>Start from the pricing logic, not the tables</h2>
+<p>The useful question is not "which fields exist?" but "which fields does any pricing rule actually read?" I build the list by walking every condition type and noting the fields its keys and formulas depend on.</p>
+<h2>Classify each field</h2>
+<p>Every candidate field goes in one of three groups: it changes the price directly, it changes which price applies, or it only affects reporting. Only the first two should trigger an update.</p>
+<h2>Test the negatives too</h2>
+<p>Unit tests usually prove that a change sends an update. I add an equal number proving that irrelevant changes don't. Those tests catch the noise before it reaches production.</p>`
+  }
+];
+
+const app = document.getElementById('app');
+document.getElementById('yr').textContent = new Date().getFullYear();
+const fmt = d => new Date(d+"T00:00:00").toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+const postItem = p => `<li>
+  <a class="title" href="#/blog/${p.slug}">${p.title}</a>
+  <p>${p.summary}</p>
+  <div class="meta">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}${fmt(p.date)}, ${p.mins} min read</div>
+</li>`;
+
+let firstLoad = true;
+const views = {
+  home(){
+    return `<div class="hero">
+      <div>
+        <h1>Ferhan Ezgin</h1>
+        <p class="lede">SAP Vistex consultant with 18+ years across ECC and S/4HANA. I design rebate, chargeback and pricing solutions that the business can run and finance can reconcile.</p>
+        <div class="actions">
+          <a class="btn primary" href="#/resume">View resume</a>
+          <a class="btn ghost" href="#/blog">Read the blog</a>
+        </div>
+      </div>
+      <div class="procedure${firstLoad?' animate':''}" role="figure" aria-label="My work, written as a pricing procedure">
+        <div class="cap"><span>Pricing procedure</span><span>ZEZGIN</span></div>
+        <table>
+          <tbody>
+            <tr><td class="step">10</td><td class="op">=</td><td class="what">SAP SD &amp; MM pricing<small>18 years across ECC and S/4HANA</small></td></tr>
+            <tr><td class="step">20</td><td class="op">+</td><td class="what">Vistex rebates &amp; chargebacks<small>Agreements, accruals, settlement</small></td></tr>
+            <tr><td class="step">30</td><td class="op">+</td><td class="what">Vistex DMP pricing<small>Price sheets, review workbench, Fiori workspaces</small></td></tr>
+            <tr><td class="step">40</td><td class="op">+</td><td class="what">Integration<small>EDI/XML, IDocs, APIs, web front ends</small></td></tr>
+            <tr><td class="step">50</td><td class="op">−</td><td class="what">Ambiguity<small>Workshops, FIT-GAP, BPDDs, clear specs, testing</small></td></tr>
+            <tr class="net"><td class="step">60</td><td class="op">=</td><td class="what">Rebates and prices finance can reconcile</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="split">
+      <h2>Latest writing</h2>
+      <ul class="posts">${POSTS.slice(0,3).map(postItem).join('')}</ul>
+    </div>`;
+  },
+  resume(){
+    return `<section class="page">
+      <h1>Resume</h1>
+      <p class="lede">SAP Vistex consultant specialising in customer and vendor rebates, incentives, billbacks, chargebacks and DMP pricing, with full life-cycle delivery from workshops to go-live.</p>
+      <div class="resume">
+        <div>
+          <div class="role">
+            <div class="when">September 2025 to present</div>
+            <h3>SAP S/4HANA consultant (contractor), Vistex rebates and DMP pricing</h3>
+            <div class="org">Sligro Food Group, Netherlands (remote)</div>
+            <ul>
+              <li>Designing the vendor rebates and chargebacks solution on Vistex 3.0 and S/4HANA for multi-entity food wholesale operations in the Netherlands and Belgium.</li>
+              <li>Authored and reviewed the business process design document: condition taxonomy, accrual and settlement architecture, contract lifecycle and status profiles.</li>
+              <li>Designed excise and packaging deduction handling through MM pricing subtotals, and sales-side partner models through custom SD pricing procedures.</li>
+              <li>Working on Vistex DMP pricing: price sheet and review workbenches, pricing objects and scenarios, Fiori workspaces, margin formulas and pricing alerts.</li>
+              <li>Defined contract approval workflow, including e-signature integration, delegation rules and auto-renewal for multi-year agreements.</li>
+            </ul>
+          </div>
+          <div class="role">
+            <div class="when">July 2009 to September 2025, and March 2008 to March 2009</div>
+            <h3>Engineering manager, Xvantage programme (2022 to 2025)</h3>
+            <h3 style="margin-top:6px">Global process manager and SAP consultant (2008 to 2022)</h3>
+            <div class="org">Ingram Micro, Irvine, California</div>
+            <ul>
+              <li>Key contributor to the global SAP template across eight full-cycle deployments on five continents, consolidating country requirements into a single template.</li>
+              <li>Led engineering teams on Xvantage, the company's AI-powered digital platform, owning integration with the global SAP backend for pricing, quoting, ordering, rebates and special bids.</li>
+              <li>Managed high-volume APIs and web integrations connecting front ends with SAP ECC, Vistex and third-party systems against strict SLAs.</li>
+              <li>Configured Vistex IP Chargeback and Composite; built a front-end tool for Vistex agreement creation and a custom tax interface between Vistex IP and Sabrix.</li>
+              <li>Configured SAP SD and MM purchasing, global and regional pricing procedures, partner determination and document types across regions.</li>
+              <li>Led process standardisation across four Asia-Pacific countries and the SAP redesign of a major country, helping return a multi-billion-dollar business to profitability.</li>
+              <li>Enhanced the Cloud Automation Platform, cutting solution lead time from months to days.</li>
+            </ul>
+          </div>
+          <div class="role">
+            <div class="when">March 2009 to July 2009</div>
+            <h3>SAP MM/SD/PP functional consultant</h3>
+            <div class="org">Smith Micro, Aliso Viejo, California</div>
+            <ul><li>Implemented SAP's software-provider best-practice solution on ECC 6.0: process analysis, configuration, MRP, interface and enhancement design, and user training.</li></ul>
+          </div>
+          <div class="role">
+            <div class="when">January 2008 to April 2008</div>
+            <h3>SAP SD/MM consultant</h3>
+            <div class="org">RJT Compuquest</div>
+            <ul><li>Blueprint, configuration, testing and training for a wholesale distribution procurement and inventory solution, including LSMW data loads.</li></ul>
+          </div>
+          <div class="role">
+            <div class="when">September 2007 to January 2008</div>
+            <h3>JSOX consultant</h3>
+            <div class="org">Yamaha Motor Corporation</div>
+            <ul><li>Tested IT and business processes for JSOX compliance across inventory and expenditure cycles, and created remediation plans.</li></ul>
+          </div>
+          <div class="role">
+            <div class="when">January 2004 to January 2006</div>
+            <h3>Systems engineer</h3>
+            <div class="org">Hidrojen Peroksit A.Ş.</div>
+            <ul><li>Production planning and control systems, SAP implementation in production planning, procurement and sales, and Lean cost and inventory reduction.</li></ul>
+          </div>
+          <div class="role">
+            <h3>Education</h3>
+            <div class="org">M.S. in Automation Engineering</div>
+            <div class="org">B.S. in Systems Engineering</div>
+          </div>
+        </div>
+        <aside class="side">
+          <h3>Vistex</h3>
+          <ul>
+            <li>Rebates and chargebacks</li>
+            <li>IP Chargeback and Composite</li>
+            <li>Accrual and settlement design</li>
+            <li>DMP pricing</li>
+          </ul>
+          <h3>SAP</h3>
+          <ul>
+            <li>S/4HANA and ECC 6.0</li>
+            <li>SD and MM pricing</li>
+            <li>ATP, inventory, GTS</li>
+            <li>Fiori</li>
+          </ul>
+          <h3>Integration</h3>
+          <ul>
+            <li>EDI/XML, IDocs, ALE/RFC</li>
+            <li>APIs and web front ends</li>
+            <li>LSMW data migration</li>
+          </ul>
+          <h3>Delivery</h3>
+          <ul>
+            <li>Workshops and FIT-GAP</li>
+            <li>BPDDs and functional specs</li>
+            <li>FAT, UAT and stress testing</li>
+            <li>SOX and JSOX controls</li>
+            <li>Onshore-offshore teams</li>
+          </ul>
+          <h3>Training</h3>
+          <ul>
+            <li>Six Sigma Green Belt course</li>
+            <li>Lean Manufacturing</li>
+            <li>SAP and Vistex modules</li>
+            <li>Project management</li>
+          </ul>
+        </aside>
+      </div>
+    </section>`;
+  },
+  blog(){
+    const tags = ['All', ...new Set(POSTS.flatMap(p=>p.tags))];
+    return `<section class="page">
+      <h1>Blog</h1>
+      <p class="lede">Notes on Vistex, SAP pricing design, integration and delivery. Examples are simplified and never describe a specific client.</p>
+      <div class="filters" role="group" aria-label="Filter by topic">
+        ${tags.map((t,i)=>`<button type="button" data-tag="${t}" aria-pressed="${i===0}">${t}</button>`).join('')}
+      </div>
+      <ul class="posts" id="postlist">${POSTS.map(postItem).join('')}</ul>
+    </section>`;
+  },
+  post(slug){
+    const p = POSTS.find(x=>x.slug===slug);
+    if(!p) return `<section class="page"><h1>Post not found</h1><p class="lede">That link doesn't match any post. <a href="#/blog">See all posts</a>.</p></section>`;
+    return `<section class="page"><article class="post">
+      <a class="back" href="#/blog">All posts</a>
+      <h1 style="margin-top:16px">${p.title}</h1>
+      <div class="meta">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}${fmt(p.date)}, ${p.mins} min read</div>
+      <div class="body">${p.body}</div>
+    </article></section>`;
+  },
+  about(){
+    return `<section class="page prose">
+      <h1>About</h1>
+      <p class="lede">I work where commercial agreements meet system design.</p>
+      <div style="margin-top:32px">
+        <p>I've spent more than 18 years in SAP, most of it on pricing and on Vistex: customer and vendor rebates, incentives, billbacks and chargebacks, and more recently DMP pricing on S/4HANA. My work covers the whole cycle, from requirement workshops and FIT-GAP analysis through process design, functional specifications, configuration and testing to go-live and day-to-day support.</p>
+        <p>For seventeen years I was at Ingram Micro, the world's largest technology distributor. I started on the initial blueprint of its global SAP template, helped take it through eight full-cycle deployments on five continents, and later led engineering teams on Xvantage, the company's digital platform, connecting it to SAP and Vistex behind the scenes.</p>
+        <p>That mix of functional and engineering work shapes how I design. I care about solutions that hold up at volume, can be explained with a worked example, and leave finance with numbers it can reconcile. I started my career as a systems engineer, with degrees in systems and automation engineering, and I still think in terms of flows, controls and failure modes.</p>
+      </div>
+    </section>`;
+  },
+  contact(){
+    return `<section class="page prose">
+      <h1>Contact</h1>
+      <p class="lede">Open to conversations about SAP Vistex and pricing projects, remote or with occasional travel.</p>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:mezg0783@gmail.com">mezg0783@gmail.com</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/" rel="noopener">linkedin.com/in/<span class="placeholder">[handle]</span></a></li>
+        <li><span>Working</span><span>Remote, occasional travel possible</span></li>
+      </ul>
+    </section>`;
+  }
+};
+
+function render(){
+  const parts = (location.hash.replace(/^#\/?/,'')||'').split('/');
+  const route = parts[0]||'home';
+  let html, nav=route;
+  if(route==='blog' && parts[1]){ html = views.post(parts[1]); nav='blog'; }
+  else html = (views[route]||views.home)();
+  app.innerHTML = html;
+  document.querySelectorAll('nav a').forEach(a=>{
+    if(a.dataset.nav===nav) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+  });
+  const titles={home:'SAP Vistex consultant',resume:'Resume',blog:'Blog',about:'About',contact:'Contact'};
+  const post = route==='blog'&&parts[1]?POSTS.find(x=>x.slug===parts[1]):null;
+  document.title = 'Ferhan Ezgin · ' + (post?post.title:(titles[nav]||titles.home));
+  if(!firstLoad){ window.scrollTo(0,0); app.focus({preventScroll:true}); }
+  firstLoad=false;
+  const f = app.querySelector('.filters');
+  if(f) f.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b) return;
+    f.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+    const t=b.dataset.tag;
+    const list=POSTS.filter(p=>t==='All'||p.tags.includes(t));
+    document.getElementById('postlist').innerHTML=list.map(postItem).join('');
+  });
+}
+window.addEventListener('hashchange',render);
+render();
+</script>
+</body>
+</html>
